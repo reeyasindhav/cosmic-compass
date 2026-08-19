@@ -29,7 +29,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const signIn = useCallback((email: string, name?: string) => {
     const next: User = {
       email,
-      name: name?.trim() || email.split("@")[0].replace(/[._-]/g, " ") || "Stargazer",
+      name: name?.trim() || email.split("@")[0]?.replace(/[._-]/g, " ") || "Stargazer",
       role: "Amateur astronomer",
     };
     setUser(next);
