@@ -44,11 +44,11 @@ function ProfilePage() {
       </section>
 
       <section className="mt-6 grid gap-4 sm:grid-cols-3">
-        {[
+        {([
           ["Nights logged", "42"],
           ["Objects observed", "128"],
           ["Events attended", "9"],
-        ].map(([label, value], i) => (
+        ] as const).map(([label, value], i) => (
           <div key={label} className="panel lift animate-rise p-6" style={{ animationDelay: `${i * 60}ms` }}>
             <p className="text-[11px] tracking-[0.2em] text-muted-foreground">{label.toUpperCase()}</p>
             <p className="mt-2 font-display text-4xl">{value}</p>
